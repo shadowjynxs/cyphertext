@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "267742275880",
+    "project_id": "cyphertext-83f10",
+    "storage_bucket": "cyphertext-83f10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267742275880:android:bf40b579940eb81f0f081d",
+        "android_client_info": {
+          "package_name": "com.nxs.cyphertext"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267742275880-10n66nkv7lm0c6mum5efpabfkmu53uob.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPHu3ffNf7I85S2b8L9D23Hv4EyhBpqgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267742275880-10n66nkv7lm0c6mum5efpabfkmu53uob.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "267742275880-5a0d3tt01feua7p955u2s12vc0bhk34d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nxs.cyphertext"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
