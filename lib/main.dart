@@ -41,14 +41,21 @@ class _MyAppState extends State<MyApp> {
   }
 
   getUserLoggedInStatus() async {
-    await HelperFunctions.getUserLoggedInState().then((value) {
-      if (value != null) _isSignedIn = true;
+    await HelperFunctions.getUserLoggedInStatus().then((value) {
+      if (value != null) {
+        setState(() {
+          _isSignedIn = value;
+        });
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          primaryColor: Constants().primaryColor,
+          scaffoldBackgroundColor: Colors.white),
       debugShowCheckedModeBanner: false,
       home: _isSignedIn ? const HomePage() : const LoginPage(),
     );
