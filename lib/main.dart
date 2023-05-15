@@ -34,6 +34,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   bool _isSignedIn = false;
+  bool _isLoading = true;
   @override
   void initState() {
     super.initState();
@@ -45,6 +46,11 @@ class _MyAppState extends State<MyApp> {
       if (value != null) {
         setState(() {
           _isSignedIn = value;
+          _isLoading = false;
+        });
+      } else {
+        setState(() {
+          _isLoading = false;
         });
       }
     });
@@ -52,12 +58,21 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-          primaryColor: Constants().primaryColor,
-          scaffoldBackgroundColor: Colors.white),
-      debugShowCheckedModeBanner: false,
-      home: _isSignedIn ? const HomePage() : const LoginPage(),
-    );
+    return _isLoading
+        ? MaterialApp(
+            home: Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(
+                    color: Theme.of(context).primaryColor),
+              ),
+            ),
+          )
+        : MaterialApp(
+            theme: ThemeData(
+                primaryColor: Constants().primaryColor,
+                scaffoldBackgroundColor: Colors.white),
+            debugShowCheckedModeBanner: false,
+            home: _isSignedIn ? const HomePage() : const LoginPage(),
+          );
   }
 }
